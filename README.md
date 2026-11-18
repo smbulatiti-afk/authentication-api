@@ -59,6 +59,19 @@ Header: `Authorization: Bearer <jwt>`
 
 Returns a logout message. With stateless JWT, the frontend must delete its stored token. The token remains valid until expiry; use short expiry or a server-side token revocation strategy if immediate invalidation is required.
 
+### Position endpoints
+All position endpoints require `Authorization: Bearer <jwt>`.
+
+- `GET /api/positions` - list positions
+- `POST /api/positions` - create a position
+- `PUT /api/positions/:id` - update a position
+- `DELETE /api/positions/:id` - delete a position
+
+Create and update JSON bodies contain exactly:
+```json
+{ "positionCode": "MGR", "positionName": "Manager" }
+```
+
 ## 6. Frontend
 Set `.env.local` in Next.js:
 ```env

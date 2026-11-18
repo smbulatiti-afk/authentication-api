@@ -11,3 +11,12 @@ CREATE TABLE IF NOT EXISTS users (
   PRIMARY KEY (id),
   UNIQUE KEY uq_users_username (username)
 );
+
+CREATE TABLE IF NOT EXISTS positions (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  position_code VARCHAR(100) NOT NULL,
+  position_name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_positions_position_code (position_code)
+);
